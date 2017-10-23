@@ -1,6 +1,6 @@
 ﻿namespace WhoIsTheHeroOf507
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         ///Gerekli tasarımcı değişkeni.
@@ -44,8 +44,21 @@
             this.comboKelle = new System.Windows.Forms.ComboBox();
             this.kisi = new System.Windows.Forms.Label();
             this.gbKayıt = new System.Windows.Forms.GroupBox();
+            this.devam = new System.Windows.Forms.Button();
             this.sil = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.ikinciPuan = new System.Windows.Forms.Label();
+            this.ikinciAd = new System.Windows.Forms.Label();
+            this.birinciPuan = new System.Windows.Forms.Label();
+            this.birinciAd = new System.Windows.Forms.Label();
+            this.ucuncuPuan = new System.Windows.Forms.Label();
+            this.ucuncuAd = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.SonucToplamPuan = new System.Windows.Forms.Label();
@@ -56,19 +69,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.sonucisim = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.devam = new System.Windows.Forms.Button();
-            this.ucuncuAd = new System.Windows.Forms.Label();
-            this.ucuncuPuan = new System.Windows.Forms.Label();
-            this.birinciPuan = new System.Windows.Forms.Label();
-            this.birinciAd = new System.Windows.Forms.Label();
-            this.ikinciPuan = new System.Windows.Forms.Label();
-            this.ikinciAd = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this._507DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.siparisKayitBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -108,7 +108,7 @@
             this.verileriGoster.TabIndex = 1;
             this.verileriGoster.Text = "Verileri Göster";
             this.verileriGoster.UseVisualStyleBackColor = true;
-            this.verileriGoster.Click += new System.EventHandler(this.veriGoster);
+            this.verileriGoster.Click += new System.EventHandler(this.VeriGoster);
             // 
             // kayit
             // 
@@ -138,7 +138,7 @@
             "Emre",
             "Koçak",
             "Uzun"});
-            this.comboİsim.Location = new System.Drawing.Point(67, 18);
+            this.comboİsim.Location = new System.Drawing.Point(88, 18);
             this.comboİsim.Name = "comboİsim";
             this.comboİsim.Size = new System.Drawing.Size(225, 28);
             this.comboİsim.TabIndex = 5;
@@ -154,7 +154,7 @@
             "Reis",
             "Çıtır",
             "Diğer"});
-            this.comboYer.Location = new System.Drawing.Point(67, 52);
+            this.comboYer.Location = new System.Drawing.Point(88, 52);
             this.comboYer.Name = "comboYer";
             this.comboYer.Size = new System.Drawing.Size(225, 28);
             this.comboYer.TabIndex = 7;
@@ -179,7 +179,7 @@
             "Yol Üstü",
             "Yol Değiştirme",
             "Oda Dışı Sipariş"});
-            this.comboTür.Location = new System.Drawing.Point(67, 86);
+            this.comboTür.Location = new System.Drawing.Point(88, 86);
             this.comboTür.Name = "comboTür";
             this.comboTür.Size = new System.Drawing.Size(225, 28);
             this.comboTür.TabIndex = 9;
@@ -202,7 +202,7 @@
             this.comboKelle.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboKelle.Location = new System.Drawing.Point(67, 120);
+            this.comboKelle.Location = new System.Drawing.Point(88, 120);
             this.comboKelle.Name = "comboKelle";
             this.comboKelle.Size = new System.Drawing.Size(225, 28);
             this.comboKelle.TabIndex = 11;
@@ -236,8 +236,19 @@
             this.gbKayıt.TabStop = false;
             this.gbKayıt.Text = " Kayıt Alanı";
             // 
+            // devam
+            // 
+            this.devam.Location = new System.Drawing.Point(180, 159);
+            this.devam.Name = "devam";
+            this.devam.Size = new System.Drawing.Size(133, 33);
+            this.devam.TabIndex = 13;
+            this.devam.Text = "Devam";
+            this.devam.UseVisualStyleBackColor = true;
+            this.devam.Click += new System.EventHandler(this.Devam_Click);
+            // 
             // sil
             // 
+            this.sil.Enabled = false;
             this.sil.Location = new System.Drawing.Point(218, 244);
             this.sil.Name = "sil";
             this.sil.Size = new System.Drawing.Size(150, 33);
@@ -265,6 +276,120 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Puan Durumu";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label13.Location = new System.Drawing.Point(6, 49);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(42, 22);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Sıra";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label14.Location = new System.Drawing.Point(23, 130);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(25, 22);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "2.";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label15.Location = new System.Drawing.Point(23, 87);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(25, 22);
+            this.label15.TabIndex = 9;
+            this.label15.Text = "1.";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label16.Location = new System.Drawing.Point(23, 170);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(25, 22);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "3.";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label11.Location = new System.Drawing.Point(149, 49);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 22);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Puan";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label12.Location = new System.Drawing.Point(63, 49);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 22);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "İsim";
+            // 
+            // ikinciPuan
+            // 
+            this.ikinciPuan.AutoSize = true;
+            this.ikinciPuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ikinciPuan.Location = new System.Drawing.Point(149, 130);
+            this.ikinciPuan.Name = "ikinciPuan";
+            this.ikinciPuan.Size = new System.Drawing.Size(0, 22);
+            this.ikinciPuan.TabIndex = 5;
+            // 
+            // ikinciAd
+            // 
+            this.ikinciAd.AutoSize = true;
+            this.ikinciAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ikinciAd.Location = new System.Drawing.Point(63, 130);
+            this.ikinciAd.Name = "ikinciAd";
+            this.ikinciAd.Size = new System.Drawing.Size(0, 22);
+            this.ikinciAd.TabIndex = 4;
+            // 
+            // birinciPuan
+            // 
+            this.birinciPuan.AutoSize = true;
+            this.birinciPuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.birinciPuan.Location = new System.Drawing.Point(149, 87);
+            this.birinciPuan.Name = "birinciPuan";
+            this.birinciPuan.Size = new System.Drawing.Size(0, 22);
+            this.birinciPuan.TabIndex = 3;
+            // 
+            // birinciAd
+            // 
+            this.birinciAd.AutoSize = true;
+            this.birinciAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.birinciAd.Location = new System.Drawing.Point(63, 87);
+            this.birinciAd.Name = "birinciAd";
+            this.birinciAd.Size = new System.Drawing.Size(0, 22);
+            this.birinciAd.TabIndex = 2;
+            // 
+            // ucuncuPuan
+            // 
+            this.ucuncuPuan.AutoSize = true;
+            this.ucuncuPuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ucuncuPuan.Location = new System.Drawing.Point(149, 170);
+            this.ucuncuPuan.Name = "ucuncuPuan";
+            this.ucuncuPuan.Size = new System.Drawing.Size(0, 22);
+            this.ucuncuPuan.TabIndex = 1;
+            // 
+            // ucuncuAd
+            // 
+            this.ucuncuAd.AutoSize = true;
+            this.ucuncuAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ucuncuAd.Location = new System.Drawing.Point(64, 170);
+            this.ucuncuAd.Name = "ucuncuAd";
+            this.ucuncuAd.Size = new System.Drawing.Size(0, 22);
+            this.ucuncuAd.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -375,140 +500,17 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "İsim: ";
             // 
-            // devam
-            // 
-            this.devam.Location = new System.Drawing.Point(159, 159);
-            this.devam.Name = "devam";
-            this.devam.Size = new System.Drawing.Size(133, 33);
-            this.devam.TabIndex = 13;
-            this.devam.Text = "Devam";
-            this.devam.UseVisualStyleBackColor = true;
-            this.devam.Click += new System.EventHandler(this.devam_Click);
-            // 
-            // ucuncuAd
-            // 
-            this.ucuncuAd.AutoSize = true;
-            this.ucuncuAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ucuncuAd.Location = new System.Drawing.Point(64, 170);
-            this.ucuncuAd.Name = "ucuncuAd";
-            this.ucuncuAd.Size = new System.Drawing.Size(0, 22);
-            this.ucuncuAd.TabIndex = 0;
-            // 
-            // ucuncuPuan
-            // 
-            this.ucuncuPuan.AutoSize = true;
-            this.ucuncuPuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ucuncuPuan.Location = new System.Drawing.Point(169, 170);
-            this.ucuncuPuan.Name = "ucuncuPuan";
-            this.ucuncuPuan.Size = new System.Drawing.Size(0, 22);
-            this.ucuncuPuan.TabIndex = 1;
-            // 
-            // birinciPuan
-            // 
-            this.birinciPuan.AutoSize = true;
-            this.birinciPuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.birinciPuan.Location = new System.Drawing.Point(169, 87);
-            this.birinciPuan.Name = "birinciPuan";
-            this.birinciPuan.Size = new System.Drawing.Size(0, 22);
-            this.birinciPuan.TabIndex = 3;
-            // 
-            // birinciAd
-            // 
-            this.birinciAd.AutoSize = true;
-            this.birinciAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.birinciAd.Location = new System.Drawing.Point(63, 87);
-            this.birinciAd.Name = "birinciAd";
-            this.birinciAd.Size = new System.Drawing.Size(0, 22);
-            this.birinciAd.TabIndex = 2;
-            // 
-            // ikinciPuan
-            // 
-            this.ikinciPuan.AutoSize = true;
-            this.ikinciPuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ikinciPuan.Location = new System.Drawing.Point(169, 130);
-            this.ikinciPuan.Name = "ikinciPuan";
-            this.ikinciPuan.Size = new System.Drawing.Size(0, 22);
-            this.ikinciPuan.TabIndex = 5;
-            // 
-            // ikinciAd
-            // 
-            this.ikinciAd.AutoSize = true;
-            this.ikinciAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ikinciAd.Location = new System.Drawing.Point(63, 130);
-            this.ikinciAd.Name = "ikinciAd";
-            this.ikinciAd.Size = new System.Drawing.Size(0, 22);
-            this.ikinciAd.TabIndex = 4;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label11.Location = new System.Drawing.Point(149, 49);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 22);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Puan";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label12.Location = new System.Drawing.Point(90, 49);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 22);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "İsim";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label13.Location = new System.Drawing.Point(6, 49);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 22);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "Sıra";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label14.Location = new System.Drawing.Point(23, 130);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(25, 22);
-            this.label14.TabIndex = 10;
-            this.label14.Text = "2.";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label15.Location = new System.Drawing.Point(23, 87);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(25, 22);
-            this.label15.TabIndex = 9;
-            this.label15.Text = "1.";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label16.Location = new System.Drawing.Point(23, 170);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(25, 22);
-            this.label16.TabIndex = 8;
-            this.label16.Text = "3.";
-            // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(688, 515);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbKayıt);
-            this.Name = "Form1";
+            this.Name = "Main";
             this.Text = "WhoIsTheHeroOf507";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this._507DataSet)).EndInit();
